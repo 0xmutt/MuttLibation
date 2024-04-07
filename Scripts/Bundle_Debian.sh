@@ -105,9 +105,6 @@ gtk-update-icon-cache -f /usr/share/icons/hicolor/
 ln -s /usr/lib/libation/Libation /usr/bin/libation
 ln -s /usr/lib/libation/Hangover /usr/bin/hangover
 ln -s /usr/lib/libation/LibationCli /usr/bin/libationcli
-# Increase the maximum number of inotify instances
-if ! grep -q 'fs.inotify.max_user_instances=524288' /etc/sysctl.conf; then
-  echo fs.inotify.max_user_instances=524288 | tee -a /etc/sysctl.conf && sysctl -p
 fi
 " >> $FOLDER_DEBIAN/postinst
 
