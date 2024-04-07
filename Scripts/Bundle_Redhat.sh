@@ -100,10 +100,6 @@ if [ \$1 -eq 1 ] ; then
   ln -s %{_libdir}/%{name}/LibationCli %{_bindir}/libationcli
 
   gtk-update-icon-cache -f %{_datadir}/icons/hicolor/
-    
-  if ! grep -q 'fs.inotify.max_user_instances=524288' /etc/sysctl.conf; then
-    echo fs.inotify.max_user_instances=524288 | tee -a /etc/sysctl.conf && sysctl -p
-  fi
 fi
 
 %postun
